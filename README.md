@@ -45,9 +45,9 @@ npm add @rozhkov/react-useful-hooks
   - [useIsChanged](#useIsChanged)
   - [useArgByRef](#useArgByRef)
   - [useChangeCounter](#useChangeCounter)
-- [Author](#Author)
-- [Was it helpful?](#Was-it-helpful%3F)
-- [License](#License)
+- [Author](#-Author)
+- [Was it helpful?](#-Was-it-helpful%3F)
+- [License](#-License)
 
 ## Hooks
 
