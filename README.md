@@ -3,7 +3,7 @@
 
 # 🔥 React Useful Hooks 🔥
 
---- 
+---
 
 <p>
   <a href="https://github.com/rozhkovs/react-useful-hooks/blob/HEAD/LICENSE">
@@ -33,21 +33,21 @@ npm add @rozhkov/react-useful-hooks
 
 ---
 
-- [Installation](#-Installation)
-- [Hooks](#-Hooks)
-  - [useInit](#-useInit)
-  - [useIsFirstRender](#-useIsFirstRender)
-  - [usePrevious](#-usePrevious)
-  - [useStableCallback](#-useStableCallback)
-  - [useMemoObject](#-useMemoObject)
-  - [useMemoArray](#-useMemoArray)
-  - [useStateRef](#-useStateRef)
-  - [useIsChanged](#-useIsChanged)
-  - [useArgByRef](#-useArgByRef)
-  - [useChangeCounter](#-useChangeCounter)
-- [Author](#-Author)
-- [Was it helpful?](#-Was it helpful?)
-- [License](#-License)
+- [Installation](#Installation)
+- [Hooks](#Hooks)
+  - [useInit](#useInit)
+  - [useIsFirstRender](#useIsFirstRender)
+  - [usePrevious](#usePrevious)
+  - [useStableCallback](#useStableCallback)
+  - [useMemoObject](#useMemoObject)
+  - [useMemoArray](useMemoArray)
+  - [useStateRef](#useStateRef)
+  - [useIsChanged](#useIsChanged)
+  - [useArgByRef](#useArgByRef)
+  - [useChangeCounter](#useChangeCounter)
+- [Author](#Author)
+- [Was it helpful?](#Was-it-helpful%3F)
+- [License](#License)
 
 ## Hooks
 
