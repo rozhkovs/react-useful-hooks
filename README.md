@@ -11,7 +11,7 @@
   </a>
 </p>
 
-Эта библиотека нацелена предоставить самые необходимые хуки, которые могут потребоваться в типичном React приложении. 
+Эта библиотека нацелена предоставить самые необходимые хуки, которые могут потребоваться в типичном React приложении.
 
 ## Installation
 For **npm**
@@ -42,12 +42,12 @@ yarn add @rozhkov/react-useful-hooks
 
 ## Hooks
 ### useInit
-Инициализирует значение во время монтирования компонента и каждый раз возвращает его на протяжении всего жизненного цикла компонента. 
+Инициализирует значение во время монтирования компонента и каждый раз возвращает его на протяжении всего жизненного цикла компонента.
 
 **Example**
 ```typescript
 // first render
-const initialized = useInit(() => {}); // the callback is called;
+const initialized = useInit(() => {}); // the callback is called.
 
 // after
 const initialized = useInit(() => {}); // the callback is not called, the return value is not changed.
@@ -63,7 +63,7 @@ const initialized = useInit(() => {}); // the callback is not called, the return
 **Example**
 ```typescript
 // first render
-const isMouting = useIsFirstRender(); // The return is true
+const isMouting = useIsFirstRender(); // The return is true.
 
 // after
 const isMouting = useIsFirstRender(); // The return is false.
@@ -79,7 +79,7 @@ const isMouting = useIsFirstRender(); // The return is false.
 **Example**
 ```typescript
 // first render
-const value = usePrevious('My arg'); // The first result is always undefined
+const value = usePrevious('My arg'); // The first result is always undefined.
 
 // second render
 const value = usePrevious('Not my arg'); // The return is 'My arg'.
@@ -96,11 +96,11 @@ const value = usePrevious('Not my arg'); // The return is 'My arg'.
 ```typescript
 // first render
 const wrapped = useStableCallback(() => 'Some function');
-wrapped() // 'Some function'
+wrapped(); // 'Some function'
 
 // second render
 const wrapped = useStableCallback(() => 'So, I have new function');
-wrapped() // 'So, I have new function', but current 'wrapped' === previous 'wrapped';
+wrapped(); // 'So, I have new function', but current 'wrapped' === previous 'wrapped'.
 ```
 **Interface**
 ```typescript
@@ -166,18 +166,18 @@ const memoizedArray = useMemo(() => ([
 
 **Example**
 ```typescript
-const [, setValue, valueRef] = useStateRef(0)
+const [, setValue, valueRef] = useStateRef(0);
 
 useEffect(() => {
   valueRef.current; // 0
-  setValue(1)
+  setValue(1);
   valueRef.current; // 1
 }, []);
 ```
 **Interface**
 ```typescript
-<S = undefined>() => [S | undefined, Dispatch<SetStateAction<S | undefined>>, Ref<S | undefined>]
-<S>(initialState: S | (() => S)) => [S, Dispatch<SetStateAction<S>>, Ref<S>]
+<S = undefined>() => [S | undefined, Dispatch<SetStateAction<S | undefined>>, Ref<S | undefined>];
+<S>(initialState: S | (() => S)) => [S, Dispatch<SetStateAction<S>>, Ref<S>];
 ```
 
 ### useIsChanged
@@ -186,12 +186,12 @@ useEffect(() => {
 **Example**
 ```typescript
 // first render
-const value = useIsChanged(0) // The return is false;
+const value = useIsChanged(0); // The return is false
 
 // second render
-const value = useIsChanged(0) // The return is false;
+const value = useIsChanged(0); // The return is false
 // or
-const value = useIsChanged(1) // The return is true;
+const value = useIsChanged(1); // The return is true
 ```
 **Interface**
 ```typescript
@@ -205,11 +205,11 @@ const value = useIsChanged(1) // The return is true;
 ```typescript
 // first render
 const ref = useArgByRef(0);
-ref.current // 0;
+ref.current; // 0
 
 // second render
 const ref = useArgByRef([]);
-ref.current // [];
+ref.current; // []
 ```
 **Interface**
 ```typescript
@@ -217,17 +217,17 @@ ref.current // [];
 ```
 
 ### useChangeCounter
-Возвражает количество изменений аргумента на протяжении всего жизненного цикла. Это может быть полезно использовать в зависимостях при сложных условиях. 
+Возвражает количество изменений аргумента на протяжении всего жизненного цикла. Это может быть полезно использовать в зависимостях при сложных условиях.
 
 **Example**
 ```typescript
 // first render
-const count = useChangeCounter('init') // The return is 0;
+const count = useChangeCounter('init'); // The return is 0
 
 // second render
-const count = useChangeCounter('init') // The return is 0;
+const count = useChangeCounter('init'); // The return is 0
 // or
-const count = useChangeCounter('changed') // The return is 1;
+const count = useChangeCounter('changed'); // The return is 1
 ```
 **Interface**
 ```typescript
@@ -237,14 +237,14 @@ const count = useChangeCounter('changed') // The return is 1;
 ## 👨‍💻 Author
 [Sergey Rozhkov](https://github.com/rozhkovs)
 
-## 🎯 Was it helpful? 
+## 🎯 Was it helpful?
 
-Тебе понравилось и оказалось полезно? Ты можешь помочь проекту следующим образом: 
+Тебе понравилось и оказалось полезно? Ты можешь помочь проекту следующим образом:
 - ⭐ Поставить звездочку.
 - 💡 Предложить свои идеи.
 - 😉 Открыть найденную проблему.
 
-## 📄 License 
+## 📄 License
 
 Rozhkov React Useful Hooks is MIT licensed, as found in the [LICENSE] file.
 
