@@ -95,12 +95,12 @@ const value = usePrevious('Not my arg'); // The return is 'My arg'.
 **Example**
 ```typescript
 // first render
-const wrapped = useStableCallback(() => 'Some value');
-wrapped() // 'Some value'
+const wrapped = useStableCallback(() => 'Some function');
+wrapped() // 'Some function'
 
 // second render
-const wrapped = useStableCallback(() => 'So, I have new result');
-wrapped() // 'So, I have new result', but current 'wrapped' === previous 'wrapped';
+const wrapped = useStableCallback(() => 'So, I have new function');
+wrapped() // 'So, I have new function', but current 'wrapped' === previous 'wrapped';
 ```
 **Interface**
 ```typescript
@@ -108,7 +108,7 @@ wrapped() // 'So, I have new result', but current 'wrapped' === previous 'wrappe
 ```
 
 ### useMemoObject
-Возвращает мемоизированный объект, сравнивая     его значения.
+Возвращает мемоизированный объект, сравнивая его значения.
 
 **Example**
 ```typescript
@@ -225,9 +225,9 @@ ref.current // [];
 const count = useChangeCounter('init') // The return is 0;
 
 // second render
-const value = useChangeCounter('init') // The return is 0;
+const count = useChangeCounter('init') // The return is 0;
 // or
-const value = useChangeCounter('changed') // The return is 1;
+const count = useChangeCounter('changed') // The return is 1;
 ```
 **Interface**
 ```typescript
