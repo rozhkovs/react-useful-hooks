@@ -11,7 +11,10 @@
   </a>
 </p>
 
+Эта библиотека нацелена предоставить самые необходимые хуки, которые могут потребоваться в типичном React приложении.
+
 This library aims to provide the most necessary hooks, which are required in typical React app;
+
 
 ## Installation
 For **npm**
@@ -42,6 +45,8 @@ yarn add @rozhkov/react-useful-hooks
 
 ## Hooks
 ### useInit
+Инициализирует значение во время монтирования компонента и каждый раз возвращает его на протяжении всего жизненного цикла компонента.
+
 Initializes a value during component mounting and returns it each time throughout the component lifecycle.
 
 **Example**
@@ -58,6 +63,7 @@ const initialized = useInit(() => {}); // the callback is not called, the return
 ```
 
 ### useIsFirstRender
+Возвращается результат: первой ли рендер или нет.
 
 At first render, the result is true, then false.
 
@@ -75,6 +81,7 @@ const isMouting = useIsFirstRender(); // The return is false.
 ```
 
 ### usePrevious
+Возвращает аргумент, которые был передан в предыдущем рендеринге.
 
 Returns a previous argument that was passed during a previous render.
 
@@ -92,6 +99,7 @@ const value = usePrevious('Not my arg'); // The return is 'My arg'.
 ```
 
 ### useStableCallback
+Возвращает новую функцию, которая сохраняет ссылку между рендерами. Если вызвать функцию, то будет вызвана последняя фукнция, которая была передана в аргумент.
 
 Returns a new callback that preserves the reference between renderers. If you call a function, the last function that was passed to the argument will be called.
 
@@ -111,6 +119,7 @@ wrapped(); // 'So, I have new function', but current 'wrapped' === previous 'wra
 ```
 
 ### useMemoObject
+Возвращает мемоизированный объект, сравнивая его значения.
 
 Return a memoized object, comparing values of its keys.
 
@@ -139,6 +148,7 @@ const memoizedObj = useMemo(() => ({
 ```
 
 ### useMemoArray
+Возвращает мемоизированный массив, сравнивая его значения.
 
 Return a memoized array, comparing its values.
 
@@ -167,6 +177,7 @@ const memoizedArray = useMemo(() => ([
 ```
 
 ### useStateRef
+Как useState, только возвращает третим параметром ref c самым последним значением.
 
 Similar to useState, but it also returns a third item "ref" with the most recent value.
 
@@ -187,6 +198,7 @@ useEffect(() => {
 ```
 
 ### useIsChanged
+Возвращает результат сравнения аргумента с предыдущим.
 
 Returns the result of comparing between a current argument and a previous argument.
 
@@ -206,6 +218,7 @@ const value = useIsChanged(1); // The return is true
 ```
 
 ### useArgByRef
+Возвращает Ref c последним значением, который был передан в аргументы.
 
 Returns 'ref' with the most recent value which was passed to the hook.
 
@@ -226,6 +239,7 @@ ref.current; // []
 ```
 
 ### useChangeCounter
+Возвражает количество изменений аргумента на протяжении всего жизненного цикла. Это может быть полезно использовать в зависимостях при сложных условиях.
 
 Returns the count of how many times the argument has changed throughout the component lifecycle. This can be helpful when you have complex conditions in useEffect, etc.
 
@@ -249,14 +263,21 @@ const count = useChangeCounter('changed'); // The return is 1
 
 ## 🎯 Was it helpful?
 
+Тебе понравилось и оказалось полезно? Ты можешь помочь проекту следующим образом:
+- ⭐ Поставить звездочку.
+- 💡 Предложить свои идеи.
+- 😉 Открыть найденную проблему.
+
 Do you like it and find it helpful? You can help this project in the following way:
 - ⭐ Put the star.
 - 💡 Suggest your ideas.
 - 😉 Open a founded issue.
 
+
 ## 📄 License
 
 Rozhkov React Useful Hooks is MIT licensed, as found in the [LICENSE] file.
+
 
 ## TODOs
 
