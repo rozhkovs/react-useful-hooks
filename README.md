@@ -2,9 +2,6 @@
 
 
 # 🔥 React Useful Hooks 🔥
-
----
-
 <p>
   <a href="https://github.com/rozhkovs/react-useful-hooks/blob/HEAD/LICENSE">
     <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="React Native is released under the MIT license." />
@@ -17,9 +14,6 @@
 Эта библиотека нацелена предоставить самые необходимые хуки, которые могут потребоваться в типичном React приложении. 
 
 ## Installation
-
----
-
 For **npm**
 ```
 npm install @rozhkov/react-useful-hooks
@@ -30,9 +24,6 @@ npm add @rozhkov/react-useful-hooks
 ```
 
 ## Navigation
-
----
-
 - [Installation](#Installation)
 - [Hooks](#Hooks)
   - [useInit](#useInit)
@@ -50,9 +41,6 @@ npm add @rozhkov/react-useful-hooks
 - [License](#-License)
 
 ## Hooks
-
----
-
 ### useInit
 Инициализирует значение во время монтирования компонента и каждый раз возвращает его на протяжении всего жизненного цикла компонента. 
 
@@ -247,23 +235,16 @@ const value = useIsChanged('changed') // The return is 1;
 ```
 
 ## 👨‍💻 Author
-
----
-
 [Sergey Rozhkov](https://github.com/rozhkovs)
 
-## 🎯 Was it helpful?
-
---- 
+## 🎯 Was it helpful? 
 
 Тебе понравилось и оказалось полезно для тебя? Ты можешь помочь проекту следующим образом: 
 - ⭐ Поставить звездочку.
 - 💡 Предложить свои идеи.
 - 😉 Открыть найденную проблему.
 
-## 📄 License
-
---- 
+## 📄 License 
 
 Rozhkov React Useful Hooks is MIT licensed, as found in the [LICENSE] file.
 
