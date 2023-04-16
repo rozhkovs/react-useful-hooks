@@ -1,5 +1,5 @@
 [LICENSE]: https://github.com/rozhkovs/react-useful-hooks/blob/HEAD/LICENSE
-
+[AUTHOR]: https://github.com/rozhkovs
 
 # 🔥 React Useful Hooks 🔥
 <p>
@@ -245,7 +245,7 @@ const count = useChangeCounter('changed'); // The return is 1
 ```
 
 ## 👨‍💻 Author
-[Sergey Rozhkov](https://github.com/rozhkovs)
+[Sergey Rozhkov][AUTHOR]
 
 ## 🎯 Was it helpful?
 
