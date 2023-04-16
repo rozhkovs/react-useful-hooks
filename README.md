@@ -15,12 +15,12 @@
 
 ## Installation
 For **npm**
-```
+```shell
 npm install @rozhkov/react-useful-hooks
 ```
 For **yarn**
-```
-npm add @rozhkov/react-useful-hooks
+```shell
+yarn add @rozhkov/react-useful-hooks
 ```
 
 ## Navigation
@@ -45,7 +45,7 @@ npm add @rozhkov/react-useful-hooks
 Инициализирует значение во время монтирования компонента и каждый раз возвращает его на протяжении всего жизненного цикла компонента. 
 
 **Example**
-```
+```typescript
 // first render
 const initialized = useInit(() => {}); // the callback is called;
 
@@ -53,7 +53,7 @@ const initialized = useInit(() => {}); // the callback is called;
 const initialized = useInit(() => {}); // the callback is not called, the return value is not changed.
 ```
 **Interface**
-```
+```typescript
 <T>(callback: () => T) => T;
 ```
 
@@ -61,7 +61,7 @@ const initialized = useInit(() => {}); // the callback is not called, the return
 Возвращается результат: первой ли рендер или нет.
 
 **Example**
-```
+```typescript
 // first render
 const isMouting = useIsFirstRender(); // The return is true
 
@@ -69,7 +69,7 @@ const isMouting = useIsFirstRender(); // The return is true
 const isMouting = useIsFirstRender(); // The return is false.
 ```
 **Interface**
-```
+```typescript
 () => boolean;
 ```
 
@@ -77,7 +77,7 @@ const isMouting = useIsFirstRender(); // The return is false.
 Возвращает аргумент, которые был передан в предыдущем рендеринге.
 
 **Example**
-```
+```typescript
 // first render
 const value = usePrevious('My arg'); // The first result is always undefined
 
@@ -85,7 +85,7 @@ const value = usePrevious('My arg'); // The first result is always undefined
 const value = usePrevious('Not my arg'); // The return is 'My arg'.
 ```
 **Interface**
-```
+```typescript
 <T>(arg: T) => T | undefined;
 ```
 
@@ -93,7 +93,7 @@ const value = usePrevious('Not my arg'); // The return is 'My arg'.
 Возвращает новую функцию, которая сохраняет ссылку между рендерами. Если вызвать функцию, то будет вызвана последняя фукнция, которая была передана в аргумент.
 
 **Example**
-```
+```typescript
 // first render
 const wrapped = useStableCallback(() => 'Some value');
 wrapped() // 'Some value'
@@ -103,7 +103,7 @@ const wrapped = useStableCallback(() => 'So, I have new result');
 wrapped() // 'So, I have new result', but current 'wrapped' === previous 'wrapped';
 ```
 **Interface**
-```
+```typescript
 <T extends AnyFunc>(callback: T | null | undefined) => T;
 ```
 
@@ -111,7 +111,7 @@ wrapped() // 'So, I have new result', but current 'wrapped' === previous 'wrappe
 Возвращает мемоизированный объект, сравнивая     его значения.
 
 **Example**
-```
+```typescript
 const memoizedObj = useMemo(() => ({
   fieldValue1,
   fieldValue2,
@@ -130,7 +130,7 @@ const memoizedObj = useMemoObject({
 });
 ```
 **Interface**
-```
+```typescript
 <T extends object>(obj: T) => T;
 ```
 
@@ -138,7 +138,7 @@ const memoizedObj = useMemoObject({
 Возвращает мемоизированный массив, сравнивая его значения.
 
 **Example**
-```
+```typescript
 const memoizedArray = useMemo(() => ([
   value1,
   value2,
@@ -157,7 +157,7 @@ const memoizedArray = useMemoArray([
 ]);
 ```
 **Interface**
-```
+```typescript
 <T extends any[]>(array: T) => T;
 ```
 
@@ -165,7 +165,7 @@ const memoizedArray = useMemoArray([
 Как useState, только возвращает третим параметром ref c самым последним значением.
 
 **Example**
-```
+```typescript
 const [, setValue, valueRef] = useStateRef(0)
 
 useEffect(() => {
@@ -175,7 +175,7 @@ useEffect(() => {
 }, []);
 ```
 **Interface**
-```
+```typescript
 <S = undefined>() => [S | undefined, Dispatch<SetStateAction<S | undefined>>, Ref<S | undefined>]
 <S>(initialState: S | (() => S)) => [S, Dispatch<SetStateAction<S>>, Ref<S>]
 ```
@@ -184,7 +184,7 @@ useEffect(() => {
 Возвращает результат сравнения аргумента с предыдущим.
 
 **Example**
-```
+```typescript
 // first render
 const value = useIsChanged(0) // The return is false;
 
@@ -194,7 +194,7 @@ const value = useIsChanged(0) // The return is false;
 const value = useIsChanged(1) // The return is true;
 ```
 **Interface**
-```
+```typescript
 (value: any) => false;
 ```
 
@@ -202,7 +202,7 @@ const value = useIsChanged(1) // The return is true;
 Возвращает Ref c последним значением, который был передан в аргументы.
 
 **Example**
-```
+```typescript
 // first render
 const ref = useArgByRef(0);
 ref.current // 0;
@@ -212,7 +212,7 @@ const ref = useArgByRef([]);
 ref.current // [];
 ```
 **Interface**
-```
+```typescript
 <T>(value: T) => {readonly current: T};
 ```
 
@@ -220,17 +220,17 @@ ref.current // [];
 Возвражает количество изменений аргумента на протяжении всего жизненного цикла. Это может быть полезно использовать в зависимостях при сложных условиях. 
 
 **Example**
-```
+```typescript
 // first render
 const count = useChangeCounter('init') // The return is 0;
 
 // second render
-const value = useIsChanged('init') // The return is 0;
+const value = useChangeCounter('init') // The return is 0;
 // or
-const value = useIsChanged('changed') // The return is 1;
+const value = useChangeCounter('changed') // The return is 1;
 ```
 **Interface**
-```
+```typescript
 <T>(value: T, compare?: (v1: T, v2: T) => boolean) => number;
 ```
 
@@ -239,7 +239,7 @@ const value = useIsChanged('changed') // The return is 1;
 
 ## 🎯 Was it helpful? 
 
-Тебе понравилось и оказалось полезно для тебя? Ты можешь помочь проекту следующим образом: 
+Тебе понравилось и оказалось полезно? Ты можешь помочь проекту следующим образом: 
 - ⭐ Поставить звездочку.
 - 💡 Предложить свои идеи.
 - 😉 Открыть найденную проблему.
@@ -249,7 +249,7 @@ const value = useIsChanged('changed') // The return is 1;
 Rozhkov React Useful Hooks is MIT licensed, as found in the [LICENSE] file.
 
 
-### TODOs
+## TODOs
 
 - [ ] add documents
 - [ ] add tests for useStateRef
