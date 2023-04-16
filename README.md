@@ -31,7 +31,7 @@ yarn add @rozhkov/react-useful-hooks
   - [usePrevious](#usePrevious)
   - [useStableCallback](#useStableCallback)
   - [useMemoObject](#useMemoObject)
-  - [useMemoArray](useMemoArray)
+  - [useMemoArray](#useMemoArray)
   - [useStateRef](#useStateRef)
   - [useIsChanged](#useIsChanged)
   - [useArgByRef](#useArgByRef)
@@ -112,6 +112,13 @@ wrapped() // 'So, I have new result', but current 'wrapped' === previous 'wrappe
 
 **Example**
 ```typescript
+const memoizedObj = useMemoObject({
+  fieldValue1,
+  fieldValue2,
+  ...otherFields
+});
+
+// is equal
 const memoizedObj = useMemo(() => ({
   fieldValue1,
   fieldValue2,
@@ -121,13 +128,6 @@ const memoizedObj = useMemo(() => ({
   fieldValue2,
   ...otherFields
 ]);
-
-// is equal
-const memoizedObj = useMemoObject({
-  fieldValue1,
-  fieldValue2,
-  ...otherFields
-});
 ```
 **Interface**
 ```typescript
@@ -139,18 +139,18 @@ const memoizedObj = useMemoObject({
 
 **Example**
 ```typescript
-const memoizedArray = useMemo(() => ([
-  value1,
-  value2,
-  ...otherValues
-]), [
+const memoizedArray = useMemoArray([
   value1,
   value2,
   ...otherValues
 ]);
 
 // is equal
-const memoizedArray = useMemoArray([
+const memoizedArray = useMemo(() => ([
+  value1,
+  value2,
+  ...otherValues
+]), [
   value1,
   value2,
   ...otherValues
