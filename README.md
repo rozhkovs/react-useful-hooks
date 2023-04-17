@@ -1,10 +1,15 @@
 [LICENSE]: https://github.com/rozhkovs/react-useful-hooks/blob/HEAD/LICENSE
 [AUTHOR]: https://github.com/rozhkovs
 
+https://github.com/<OWNER>/<REPOSITORY>/actions/workflows/<WORKFLOW_FILE>/badge.svg
+
 # 🔥 React Useful Hooks 🔥
 <p>
   <a href="https://github.com/rozhkovs/react-useful-hooks/blob/HEAD/LICENSE">
-    <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="React Native is released under the MIT license." />
+    <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="React Useful Hooks is released under the MIT license." />
+  </a>
+  <a href="https://github.com/rozhkovs/react-useful-hooks/actions/workflows/testing.yml">
+    <img src="https://github.com/rozhkovs/react-useful-hooks/actions/workflows/testing.yml/badge.svg" alt="React Useful Hooks passed the testing" />
   </a>
   <a href="https://www.npmjs.com/package/@rozhkov/react-useful-hooks">
     <img src="https://img.shields.io/npm/v/@rozhkov/react-useful-hooks?color=brightgreen&label=npm%20package" alt="Current npm package version." />
