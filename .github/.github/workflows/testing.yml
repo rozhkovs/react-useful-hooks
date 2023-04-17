@@ -1,0 +1,26 @@
+name: testing
+run-name: ${{ github.actor }} ran the all tests.
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+jobs:
+  all-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+      - run: yarn install --frozen-lockfile
+      - name: check typescript
+        run: yarn run tsc:check
+      - name: check lint;
+        run: yarn run lint:check
+      - name: check format
+        run: yarn run format:check
+      - name: run unit tests
+        run: yarn run test:run
