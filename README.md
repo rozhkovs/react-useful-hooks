@@ -257,9 +257,3 @@ Do you like it and find it helpful? You can help this project in the following w
 ## 📄 License
 
 Rozhkov React Useful Hooks is MIT licensed, as found in the [LICENSE] file.
-
-## TODOs
-
-- [ ] add documents
-- [ ] add tests for useStateRef
-- [ ] automate the execution of tests
