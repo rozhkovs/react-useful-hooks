@@ -1,8 +1,6 @@
 [LICENSE]: https://github.com/rozhkovs/react-useful-hooks/blob/HEAD/LICENSE
 [AUTHOR]: https://github.com/rozhkovs
 
-https://github.com/<OWNER>/<REPOSITORY>/actions/workflows/<WORKFLOW_FILE>/badge.svg
-
 # 🔥 React Useful Hooks 🔥
 <p>
   <a href="https://github.com/rozhkovs/react-useful-hooks/blob/HEAD/LICENSE">
