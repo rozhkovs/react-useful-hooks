@@ -1,7 +1,7 @@
 {
   "name": "@rozhkov/react-useful-hooks",
   "description": "Useful hooks for React application",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "license": "MIT",
   "packageManager": "yarn@3.3.1",
   "sideEffect": false,
