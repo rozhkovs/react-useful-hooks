@@ -7,6 +7,7 @@
   "sideEffect": false,
   "authors": "Sergey Rozhkov <rozhkovse1@gmail.com> (https://github.com/rozhkovs)",
   "scripts": {
+    "check-all": "yarn run tsc:check && yarn run lint:check && yarn run format:check",
     "tsc:module": "tsc --module es6 --outDir ./dist/module",
     "tsc:commonjs": "tsc --module commonjs --outDir ./dist/commonjs",
     "tsc:build": "rm -rf ./dist && yarn run tsc:module && yarn run tsc:commonjs",
@@ -14,8 +15,8 @@
     "test:run": "jest",
     "lint:fix": "eslint --fix ./src",
     "lint:check": "eslint ./src",
-    "format:fix": "prettier --write \"./src/**/*.ts\" \"**/*.md\"",
-    "format:check": "prettier --check \"./src/**/*.ts\" \"**/*.md\""
+    "format:fix": "prettier --write \"./src/**/*.ts\"",
+    "format:check": "prettier --check \"./src/**/*.ts\""
   },
   "main": "dist/commonjs/index.js",
   "module": "dist/module/index.js",
