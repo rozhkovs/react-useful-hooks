@@ -6,7 +6,7 @@
   "packageManager": "yarn@3.3.1",
   "sideEffect": false,
   "repository": "github:rozhkovs/react-useful-hooks",
-  "authors": "Sergey Rozhkov <rozhkovse1@gmail.com> (https://github.com/rozhkovs)",
+  "author": "Sergey Rozhkov <rozhkovse1@gmail.com> (https://github.com/rozhkovs)",
   "scripts": {
     "check-all": "yarn run tsc:check && yarn run lint:check && yarn run format:check",
     "tsc:module": "tsc --module es6 --outDir ./dist/module",
