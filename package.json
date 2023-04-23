@@ -17,7 +17,8 @@
     "lint:fix": "eslint --fix ./src",
     "lint:check": "eslint ./src",
     "format:fix": "prettier --write \"./src/**/*.ts\"",
-    "format:check": "prettier --check \"./src/**/*.ts\""
+    "format:check": "prettier --check \"./src/**/*.ts\"",
+    "prepack": "yarn run tsc:build"
   },
   "main": "dist/commonjs/index.js",
   "module": "dist/module/index.js",
