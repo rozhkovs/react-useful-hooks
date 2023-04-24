@@ -1,4 +1,5 @@
 import {useCallback, useRef} from 'react';
+import {EMPTY_ARRAY} from 'default-values';
 
 type AnyFunc = (...params: any[]) => any;
 
@@ -11,7 +12,11 @@ const useStableCallback = <T extends AnyFunc | null | undefined>(
 ): T extends AnyFunc ? T : () => void => {
   const ref = useRef<T>(callback);
   ref.current = callback;
-  return useCallback<any>((...params: any[]) => ref.current?.(...params), []);
+  return useCallback<any>(
+    (...params: any[]) => ref.current?.(...params),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    EMPTY_ARRAY,
+  );
 };
 
 export default useStableCallback;

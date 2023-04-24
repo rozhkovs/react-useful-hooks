@@ -38,6 +38,9 @@
     "utils",
     "helpers"
   ],
+  "dependencies": {
+    "default-values": "^1.0.1"
+  },
   "peerDependencies": {
     "react": "^16.8 || ^17 || ^18"
   },
