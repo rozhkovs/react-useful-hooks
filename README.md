@@ -14,7 +14,7 @@
   </a>
 </p>
 
-This library aims to provide the most necessary hooks, which are required in typical React app;
+This library aims to provide the most necessary hooks, which are required in typical React or React Native app;
 
 ## Installation
 For **npm**
