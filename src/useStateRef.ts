@@ -9,13 +9,14 @@ function useStateRef<S = undefined>(): [
   Dispatch<SetStateAction<S | undefined>>,
   Ref<S | undefined>,
 ];
-function useStateRef<S>(initialState: S | (() => S)): [S, Dispatch<SetStateAction<S>>, Ref<S>] {
+function useStateRef<S>(initialState: S | (() => S)): [S, Dispatch<SetStateAction<S>>, Ref<S>];
+function useStateRef<S>(initialState: S | (() => S) | undefined) {
   const [state, setState] = useState(initialState);
   const ref = useRef(state);
 
   const dispatch = useCallback(
     (val: SetStateAction<S>) => {
-      ref.current = typeof val === 'function' ? (val as (prevState: S) => S)(ref.current) : val;
+      ref.current = typeof val === 'function' ? (val as any)(ref.current) : val;
       setState(ref.current);
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
