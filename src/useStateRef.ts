@@ -19,8 +19,7 @@ function useStateRef<S>(initialState: S | (() => S) | undefined) {
       ref.current = typeof val === 'function' ? (val as any)(ref.current) : val;
       setState(ref.current);
     },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    EMPTY_ARRAY,
+    EMPTY_ARRAY, // eslint-disable-line react-hooks/exhaustive-deps
   );
 
   return [state, dispatch, ref];

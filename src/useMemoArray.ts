@@ -4,8 +4,7 @@ import useChangeCounter from './useChangeCounter';
 
 const useMemoArray = <T extends readonly any[]>(arr: T): T => {
   const depsVal = useChangeCounter(arr, isEqual);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  return useMemo(() => arr, [depsVal]);
+  return useMemo(() => arr, [depsVal]); // eslint-disable-line react-hooks/exhaustive-deps
 };
 
 export default useMemoArray;

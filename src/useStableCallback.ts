@@ -14,8 +14,7 @@ const useStableCallback = <T extends AnyFunc | null | undefined>(
   ref.current = callback;
   return useCallback<any>(
     (...params: any[]) => ref.current?.(...params),
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    EMPTY_ARRAY,
+    EMPTY_ARRAY, // eslint-disable-line react-hooks/exhaustive-deps
   );
 };
 
