@@ -67,10 +67,10 @@ At first render, the result is true, then false.
 **Example**
 ```typescript
 // first render
-const isMouting = useIsFirstRender(); // The return is true.
+const isFirst = useIsFirstRender(); // The return is true.
 
 // after
-const isMouting = useIsFirstRender(); // The return is false.
+const isFirst = useIsFirstRender(); // The return is false.
 ```
 **Interface**
 ```typescript
